@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class Answers extends Migration
+class SettingNullableToTitleAndText extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,9 @@ class Answers extends Migration
      */
     public function up()
     {
-        //
+        Schema::table('questions', function (Blueprint $table) {
+            //
+        });
     }
 
     /**
@@ -23,6 +25,8 @@ class Answers extends Migration
      */
     public function down()
     {
-        //
+        Schema::table('questions', function (Blueprint $table) {
+            //
+        });
     }
 }
