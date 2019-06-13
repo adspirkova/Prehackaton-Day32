@@ -13,5 +13,6 @@ class CategoryController extends Controller
         -> orderBy('name')
         -> get();
         return view('categories/index',compact('categories'));
+        
     }
 }
