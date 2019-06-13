@@ -13,17 +13,14 @@ class Questions extends Migration
      */
     public function up()
     {
-        // Schema::create('questions', function (Blueprint $table) { // schema for table 'users'
-        //     $table->BigIncrements('id');                         // add column 'id' that will be AI PK
-        //     $table->unsignedBigInteger('user_id')->unique();                           // create a string column 
-        //     $table->string('title')->nullable()->change();                       // create a string column 
-        //     $table->string('text')->nullable()->change();                       // create a string column
-        //     $table->timestamps();                             // add common columns 'created_at' and 'updated_at'
-        // });
-        Schema::table('questions', function (Blueprint $table) {
-            $table->string('title')->nullable()->change(); 
-            $table->string('text')->nullable()->change(); // makes the column nullable
+        Schema::create('questions', function (Blueprint $table) { // schema for table 'users'
+            $table->BigIncrements('id');                         // add column 'id' that will be AI PK
+            $table->unsignedBigInteger('user_id')->unique();                           // create a string column 
+            $table->string('title')->nullable();                       // create a string column 
+            $table->string('text')->nullable();                       // create a string column
+            $table->timestamps();                             // add common columns 'created_at' and 'updated_at'
         });
+        
     }
 
     /**
@@ -33,10 +30,7 @@ class Questions extends Migration
      */
     public function down()
     {
-        // Schema::dropIfExists('questions');
-        Schema::table('questions', function (Blueprint $table) {
-            $table->string('title')->nullable(false)->change(); // makes the column NOT nullable again
-            $table->string('text')->nullable(false)->change();
-        });
+        Schema::dropIfExists('questions');
+        
     }
 }
