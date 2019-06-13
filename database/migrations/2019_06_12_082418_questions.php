@@ -20,7 +20,7 @@ class Questions extends Migration
         //     $table->string('text')->nullable()->change();                       // create a string column
         //     $table->timestamps();                             // add common columns 'created_at' and 'updated_at'
         // });
-        Schema::table('questions', function (Blueprint $table) {
+        Schema::table('questions', function (Bluevendorprint $table) {
             $table->string('title')->nullable()->change(); 
             $table->string('text')->nullable()->change(); // makes the column nullable
         });
