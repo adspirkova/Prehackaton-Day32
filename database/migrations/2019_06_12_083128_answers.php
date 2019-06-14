@@ -13,15 +13,12 @@ class Answers extends Migration
      */
     public function up()
     {
-        // Schema::create('answers', function (Blueprint $table) { // schema for table 'users'
-        //     $table->BigIncrements('id');                         // add column 'id' that will be AI PK
-        //     $table->unsignedBigInteger('user_id');                           // create a string column 
-        //     $table->unsignedBigInteger('question_id'); 
-        //     $table->text('text')->nullable()->change();                       // create a string column
-        //     $table->timestamps();                             // add common columns 'created_at' and 'updated_at'
-        // });
-        Schema::table('answers', function (Blueprint $table) {
-            $table->text('text')->nullable()->change(); // makes the column nullable
+        Schema::create('answers', function (Blueprint $table) { // schema for table 'users'
+            $table->BigIncrements('id');                         // add column 'id' that will be AI PK
+            $table->unsignedBigInteger('user_id');                           // create a string column 
+            $table->unsignedBigInteger('question_id'); 
+            $table->text('text')->nullable()->change();                       // create a string column
+            $table->timestamps();                             // add common columns 'created_at' and 'updated_at'
         });
     }
 
@@ -32,8 +29,6 @@ class Answers extends Migration
      */
     public function down()
     {
-        Schema::table('answers', function (Blueprint $table) {
-            $table->string('text')->nullable(false)->change(); // makes the column NOT nullable again
-        })
+        Schema::dropIfExists('answers');
     }
 }

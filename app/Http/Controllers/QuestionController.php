@@ -43,8 +43,8 @@ class QuestionController extends Controller
 
         // return 'This is a detail of a question';
         $questions = Question::where('user_id', 1)->get();
-        $answers = Answer::where('question_id', 1)->get();
-        $view = view('questions/show',compact('questions','answers'));
+        // $answers = Answer::where('question_id', 1)->get();
+        $view = view('questions/show',compact('questions'));
         return $view;
 
     }

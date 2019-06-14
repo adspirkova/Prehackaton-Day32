@@ -19,9 +19,11 @@ Route::get('/', function () {
 Route::get('/questions', 'QuestionController@index');
 Route::get('/questions/test', 'QuestionController@index2');
 Route::get('/questions/1', 'QuestionController@show');
-//Route::get('/questions/1', 'QuestionController@index4');
+// Route::get('/questions/1', 'QuestionController@index4');
 
 Route::get('/question', 'QuestionController@index3');
 
+Route::get('/answers/1', 'AnswerController@show');
+Route::post('/answers/1', 'AnswerController@vote');
 
 Route::get('/categories', 'CategoryController@index');

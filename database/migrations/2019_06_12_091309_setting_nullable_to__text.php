@@ -14,7 +14,7 @@ class SettingNullableToText extends Migration
     public function up()
     {
         Schema::table('answers', function (Blueprint $table) {
-            //
+            $table->text('text')->nullable()->change(); // makes the column nullable
         });
     }
 
@@ -26,7 +26,7 @@ class SettingNullableToText extends Migration
     public function down()
     {
         Schema::table('answers', function (Blueprint $table) {
-            //
+            $table->string('text')->nullable(false)->change(); // makes the column NOT nullable again
         });
     }
 }

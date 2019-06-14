@@ -38,8 +38,9 @@
 </section>
 
 <section id="answers">
-        <h2>{{count($answers)}} Answers</h2>
-   @foreach ($answers as $answer) 
+        <h2>{{$question -> answers ->count()}} Answers</h2>
+
+   @foreach ($question -> answers as $answer) 
    <div class="container">
         
         <div class="answer">
@@ -61,7 +62,7 @@
                 </div>
             </div>
             <div class="answer-right">
-                <p>{{$answer->text}}</p>
+                <p>{{$answer ->text}}</p>
             </div>
         </div>
 
